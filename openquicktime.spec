@@ -41,6 +41,9 @@ Pliki nag³ówkowe biblioteki OpenQuicktime.
 %setup -q -n %{name}-%{version}-src
 
 %build
+rm -f missing
+%{__libtoolize}
+%{__aclocal} 
 %{__autoconf}
 %configure
 %{__make}
