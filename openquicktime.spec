@@ -6,7 +6,7 @@ Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
-# Source0-md5: f90bc78b8632c6c254cddf70b4726644
+# Source0-md5:	f90bc78b8632c6c254cddf70b4726644
 Patch0:		%{name}-types.patch
 Patch1:		%{name}-glib.patch
 URL:		http://openquicktime.sourceforge.net/
