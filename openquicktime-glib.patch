@@ -1,0 +1,30 @@
+--- openquicktime-1.0-src/openquicktime.c.orig	2001-07-27 14:53:38.000000000 +0200
++++ openquicktime-1.0-src/openquicktime.c	2004-08-22 15:50:17.284325609 +0200
+@@ -25,10 +25,6 @@
+ #include "openquicktime.h"
+ #include <sys/stat.h>
+ 
+-#ifndef WIN32
+-#include <glib.h>
+-#endif
+-
+ static longest get_file_length(quicktime_t *file)
+ {
+ 	struct stat status;
+--- openquicktime-1.0-src/configure.in.orig	2004-08-22 15:43:51.524597000 +0200
++++ openquicktime-1.0-src/configure.in	2004-08-22 15:51:34.939746776 +0200
+@@ -162,13 +162,7 @@
+ dnl Library checks
+ dnl --------------
+ 
+-MY_GLIB
+-
+-CFLAGS="`$my_cv_glib_config --cflags` $CFLAGS"
+-CXXFLAGS="`$my_cv_glib_config --cflags` $CXXFLAGS"
+-ASFLAGS="$ASFLAGS"
+-LIBS="`$my_cv_glib_config --libs` $LIBS -lm"
+-
++AC_CHECK_LIB(m,main)
+ AC_CHECK_LIB(z,gzopen,,AC_MSG_ERROR(library libz not found))
+ AC_SEARCH_LIBS(dlopen,dl,,AC_MSG_ERROR(library dl not found))
+ 
