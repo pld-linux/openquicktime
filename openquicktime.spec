@@ -5,13 +5,6 @@ Version:	1.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://prdownloads.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
 URL:		http://openquicktime.sourceforge.net/
 BuildRequires:	autoconf
@@ -36,13 +29,6 @@ jest dostЙpnych tylko kilka codekСw.
 Summary:	OpenQuicktime development package
 Summary(pl):	Pakiet dla programistСw OpenQuicktime
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
