@@ -57,14 +57,13 @@ install -d $RPM_BUILD_ROOT%{_libdir}
 	includedir=$RPM_BUILD_ROOT%{_includedir} \
 
 mv -f audioplugin/MP3/README README.MP3
-gzip -9nf AUTHORS ChangeLog NEWS README* TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README* TODO
 %attr(755,root,root) %{_libdir}/*.so
 
 %files devel
