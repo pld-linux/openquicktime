@@ -1,0 +1,70 @@
+--- openquicktime-1.0-src/private.h.orig	2001-07-27 14:53:39.000000000 +0200
++++ openquicktime-1.0-src/private.h	2004-08-22 15:34:59.935746209 +0200
+@@ -33,8 +33,9 @@
+ #ifndef WIN32
+ 
+ #include "config.h"
+-typedef __s64 longest;
+-typedef __u64 ulongest;
++#include <stdint.h>
++typedef int64_t longest;
++typedef uint64_t ulongest;
+ #define OPENQUICKTIMELIB_API
+ 
+ #else
+--- openquicktime-1.0-src/configure.in.orig	2001-07-27 14:53:37.000000000 +0200
++++ openquicktime-1.0-src/configure.in	2004-08-22 15:40:15.997147954 +0200
+@@ -63,14 +63,6 @@
+ AC_CHECK_SIZEOF(int)
+ AC_CHECK_SIZEOF(long)
+ AC_CHECK_SIZEOF(long long)
+-AC_CHECK_TYPE(__u8)
+-AC_CHECK_TYPE(__s8)
+-AC_CHECK_TYPE(__u16)
+-AC_CHECK_TYPE(__s16)
+-AC_CHECK_TYPE(__u32)
+-AC_CHECK_TYPE(__s32)
+-AC_CHECK_TYPE(__u64)
+-AC_CHECK_TYPE(__s64)
+ 
+ dnl os types
+ AC_TYPE_OFF_T
+@@ -322,38 +314,6 @@
+ 
+ __EOF
+ 
+-if test x$ac_cv_type___u8 = xno; then
+-	echo "typedef unsigned $int8 __u8;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___s8 = xno; then
+-	echo "typedef signed $int8 __s8;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___u16 = xno; then
+-	echo "typedef unsigned $int16 __u16;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___s16 = xno; then
+-	echo "typedef signed $int16 __s16;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___u32 = xno; then
+-	echo "typedef unsigned $int32 __u32;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___s32 = xno; then
+-	echo "typedef signed $int32 __s32;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___u64 = xno; then
+-	echo "typedef unsigned $int64 __u64;" >>$outfile
+-fi
+-
+-if test x$ac_cv_type___s64 = xno; then
+-	echo "typedef signed $int64 __s64;" >>$outfile
+-fi
+-
+ cat >> $outfile <<__EOF
+ 
+ #define inline $inline
