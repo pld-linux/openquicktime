@@ -2,15 +2,16 @@ Summary:	Library to load, create, manipulate QuickTime files
 Summary(pl):	Biblioteka do czytania, robienia i modyfikowania plików QuickTime
 Name:		openquicktime
 Version:	1.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
 # Source0-md5: f90bc78b8632c6c254cddf70b4726644
+Patch0:		%{name}-types.patch
+Patch1:		%{name}-glib.patch
 URL:		http://openquicktime.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
@@ -32,7 +33,7 @@ jest dostêpnych tylko kilka codeków.
 Summary:	OpenQuicktime development package
 Summary(pl):	Pakiet dla programistów OpenQuicktime
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for OpenQuicktime library.
@@ -42,13 +43,15 @@ Pliki nag³ówkowe biblioteki OpenQuicktime.
 
 %prep
 %setup -q -n %{name}-%{version}-src
+%patch0 -p1
+%patch1 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %configure
+
 %{__make}
 
 %install
