@@ -9,8 +9,10 @@ Source0:	http://dl.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
 # Source0-md5: f90bc78b8632c6c254cddf70b4726644
 URL:		http://openquicktime.sourceforge.net/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	glib-devel
 BuildRequires:	libjpeg-devel
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
