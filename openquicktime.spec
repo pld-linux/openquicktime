@@ -5,12 +5,12 @@ Version:	1.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://prdownloads.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
+Source0:	http://dl.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
 URL:		http://openquicktime.sourceforge.net/
 BuildRequires:	autoconf
+BuildRequires:	glib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	zlib-devel
-BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
