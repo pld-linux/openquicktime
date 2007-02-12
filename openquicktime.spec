@@ -1,5 +1,5 @@
 Summary:	Library to load, create, manipulate QuickTime files
-Summary(pl):	Biblioteka do czytania, robienia i modyfikowania plików QuickTime
+Summary(pl.UTF-8):   Biblioteka do czytania, robienia i modyfikowania plikÃ³w QuickTime
 Name:		openquicktime
 Version:	1.0
 Release:	3
@@ -23,23 +23,23 @@ manipulate QuickTime files. Audio and video decoding and encoding is
 provided using a plug-in mechanism. Unfortunately, there are very few
 codecs available by now.
 
-%description -l pl
-OpenQuicktime jest ma³± bibliotek± pozwalaj±c± na czytanie, tworzenie
-i modyfikowanie plików QuickTime. Kodowanie i dekodowanie audio i
-video jest obs³ugiwane poprzez mechanizm wtyczek. Niestety na razie
-jest dostêpnych tylko kilka codeków.
+%description -l pl.UTF-8
+OpenQuicktime jest maÅ‚Ä… bibliotekÄ… pozwalajÄ…cÄ… na czytanie, tworzenie
+i modyfikowanie plikÃ³w QuickTime. Kodowanie i dekodowanie audio i
+video jest obsÅ‚ugiwane poprzez mechanizm wtyczek. Niestety na razie
+jest dostÄ™pnych tylko kilka codekÃ³w.
 
 %package devel
 Summary:	OpenQuicktime development package
-Summary(pl):	Pakiet dla programistów OpenQuicktime
+Summary(pl.UTF-8):   Pakiet dla programistÃ³w OpenQuicktime
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for OpenQuicktime library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki OpenQuicktime.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki OpenQuicktime.
 
 %prep
 %setup -q -n %{name}-%{version}-src
