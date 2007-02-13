@@ -1,5 +1,5 @@
 Summary:	Library to load, create, manipulate QuickTime files
-Summary(pl.UTF-8):   Biblioteka do czytania, robienia i modyfikowania plików QuickTime
+Summary(pl.UTF-8):	Biblioteka do czytania, robienia i modyfikowania plików QuickTime
 Name:		openquicktime
 Version:	1.0
 Release:	3
@@ -31,7 +31,7 @@ jest dostępnych tylko kilka codeków.
 
 %package devel
 Summary:	OpenQuicktime development package
-Summary(pl.UTF-8):   Pakiet dla programistów OpenQuicktime
+Summary(pl.UTF-8):	Pakiet dla programistów OpenQuicktime
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
