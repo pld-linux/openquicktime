@@ -2,13 +2,14 @@ Summary:	Library to load, create, manipulate QuickTime files
 Summary(pl.UTF-8):	Biblioteka do czytania, robienia i modyfikowania plików QuickTime
 Name:		openquicktime
 Version:	1.0
-Release:	3
-License:	LGPL
+Release:	4
+License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
+Source0:	http://downloads.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
 # Source0-md5:	f90bc78b8632c6c254cddf70b4726644
 Patch0:		%{name}-types.patch
 Patch1:		%{name}-glib.patch
+Patch2:		%{name}-gcc.patch
 URL:		http://openquicktime.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -45,6 +46,7 @@ Pliki nagłówkowe biblioteki OpenQuicktime.
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -67,10 +69,16 @@ mv -f audioplugin/MP3/README README.MP3
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README* TODO
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/libopenquicktime.so
+%attr(755,root,root) %{_libdir}/quicktime_codec_.mp3.so
+%attr(755,root,root) %{_libdir}/quicktime_codec_jpeg.so
+%attr(755,root,root) %{_libdir}/quicktime_codec_ms.so
 
 %files devel
 %defattr(644,root,root,755)
