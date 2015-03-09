@@ -2,7 +2,7 @@ Summary:	Library to load, create, manipulate QuickTime files
 Summary(pl.UTF-8):	Biblioteka do czytania, robienia i modyfikowania plików QuickTime
 Name:		openquicktime
 Version:	1.0
-Release:	4
+Release:	5
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/openquicktime/%{name}-%{version}-src.tgz
